@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { StyleSheet, Button, View } from 'react-native';
 import generateKey from '@tammiec/generatekey';
 
@@ -11,15 +11,13 @@ export default function ButtonContainer() {
   return (
     <View style={styles.buttonContainer}>
       {numberButtons.map(el => {
-        const buttonRef = useRef();
         const handleNumber = () => {
-          console.log('number is', parseInt(buttonRef.current.props.title));
+          console.log('number is', parseInt(el));
         };
         return <Button 
           key={generateKey()} 
           title={el} 
           style={styles.button} 
-          ref={buttonRef} 
           onPress={handleNumber}
         />
       })}
