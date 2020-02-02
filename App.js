@@ -17,9 +17,9 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     paddingTop: '15%',
     paddingBottom: '15%',
-    flex: 1,
     flexDirection: 'column',
     backgroundColor: '#fff',
     alignItems: 'center',

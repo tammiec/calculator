@@ -3,14 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function Total(props) {
   return (
-    <View style={styles.container}>
-      <Text>{props.total}</Text>
-    </View>
+    <Text style={styles.total}>{props.total}</Text>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  total: {
     backgroundColor: '#bbbbbb',
     width: '100%',
     height: '15%'
