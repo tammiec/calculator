@@ -6,29 +6,24 @@ require("./../lib/swisscalc.calc.calculator.js");
 require("./../lib/swisscalc.display.numericDisplay.js");
 require("./../lib/swisscalc.display.memoryDisplay.js");
 
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text} from 'react-native';
 
-import { CalcButton } from '../components';
+import { CalcButton, CalcDisplay } from '../components';
 
 
 const CalculatorScreen = props => {
 
+  // INITIALIZE CALCULATOR
   var oc = global.swisscalc.lib.operatorCache;
   var calc = new global.swisscalc.calc.calculator();
-    
-  // Calculate: 12 + 45 = 	
-  calc.addDigit("1");
-  calc.addDigit("2");
-  calc.addBinaryOperator(oc.AdditionOperator);
-  calc.addDigit("4");
-  calc.addDigit("5");
-  calc.equalsPressed();
-  console.log(calc.getMainDisplay());	// 57
-  calc.clear();
+  
+  // STATE
+  const [display, setDisplay] = useState('0');
 
   return (
     <View style={{paddingTop: 50}}>
+      <CalcDisplay display={display} />
       <CalcButton title='+' color='red' backgroundColor='yellow' />
     </View>
   );
