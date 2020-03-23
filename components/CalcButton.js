@@ -5,6 +5,7 @@ const CalcButton = ({
   title = '',
   color = 'white',
   backgroundColor = 'black',
+  style = {},
   ...props
 }) => {
 
@@ -13,11 +14,9 @@ const CalcButton = ({
   };
 
   return (
-    <View>
-      <TouchableOpacity onPress={onPress} style={[styles.container, { backgroundColor: backgroundColor }]}>
-        <Text style={[styles.text, { color: color }]}>{title}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity onPress={onPress} style={[styles.container, { backgroundColor: backgroundColor, }, { ...style }]}>
+      <Text style={[styles.text, { color: color }]}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 
@@ -27,9 +26,10 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 80,
+    height: 80,
+    borderRadius: 240,
+    margin: 5,
   },
   text: {
     fontSize: 30,
