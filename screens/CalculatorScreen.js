@@ -8,9 +8,7 @@ require("./../lib/swisscalc.display.memoryDisplay.js");
 
 import React, { useState, useEffect, useMemo } from 'react';
 import { View, StyleSheet, Dimensions, PanResponder } from 'react-native';
-
 import { CalcButton, CalcDisplay } from '../components';
-
 
 const CalculatorScreen = props => {
 
