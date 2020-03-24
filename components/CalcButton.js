@@ -6,12 +6,9 @@ const CalcButton = ({
   color = 'white',
   backgroundColor = 'black',
   style = {},
+  onPress,
   ...props
 }) => {
-
-  const onPress = () => {
-
-  };
 
   return (
     <TouchableOpacity onPress={onPress} style={[styles.container, { backgroundColor: backgroundColor, }, { ...style }]}>
