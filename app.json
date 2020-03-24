@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "A basic calculator",
+    "githubUrl": "https://github.com/tammiec/calculator"
   }
 }
