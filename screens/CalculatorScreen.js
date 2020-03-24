@@ -47,6 +47,11 @@ const CalculatorScreen = props => {
     setDisplay(calc.getMainDisplay());
   };
 
+  const onUnaryOperatorPress = operator => {
+    calc.addUnaryOperator(operator);
+    setDisplay(calc.getMainDisplay());
+  }
+
   const onEqualsPress = () => {
     calc.equalsPressed();
     setDisplay(calc.getMainDisplay());
@@ -63,7 +68,7 @@ const CalculatorScreen = props => {
         <View style={styles.buttonRow}>
           <CalcButton onPress={onClearPress} title='C' color='red' backgroundColor='yellow' />
           <CalcButton onPress={onPlusMinusPress} title='+/-' color='red' backgroundColor='yellow' />
-          <CalcButton title='%' color='red' backgroundColor='yellow' />
+          <CalcButton onPress={() => onUnaryOperatorPress(oc.PercentOperator)} title='%' color='red' backgroundColor='yellow' />
           <CalcButton onPress={() => onBinaryOperatorPress(oc.DivisionOperator)} title='/' color='red' backgroundColor='yellow' />
         </View>
 
